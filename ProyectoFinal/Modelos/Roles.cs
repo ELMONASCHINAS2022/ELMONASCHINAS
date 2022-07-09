@@ -4,8 +4,10 @@ using System.Text;
 
 namespace ProyectoFinal.Modelos
 {
-    internal class Roles
+    public class Roles
     {
         //la profa majo
+
+        //ElMonasChinas estuvo Aqui
     }
 }
