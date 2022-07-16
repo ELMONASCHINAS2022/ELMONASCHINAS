@@ -42,6 +42,7 @@ namespace ProyectoFinal
                     if (result != null)
                     {
                         Sistema sistema = new Sistema();
+                        Hide();
                         sistema.Show();
                     }
                     else

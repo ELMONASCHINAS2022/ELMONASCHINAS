@@ -6,8 +6,49 @@
         xmlns:local="clr-namespace:ProyectoFinal"
         mc:Ignorable="d"
         Title="Sistema" Height="450" Width="800">
-    <Grid>
-        <Label Content="BIENVENIDO AL SISTEMA" FontFamily="Times New Roman" FontSize="30" Margin="197,40,228,351"/>
+    <Grid Background="Black">
+        <Label Content="Dashboard" HorizontalAlignment="Center" Margin="0,33,0,0" VerticalAlignment="Top" RenderTransformOrigin="-7.433,-4.183" FontSize="50" FontFamily="Times New Roman" Background="{x:Null}" Foreground="White"/>
+        <DataGrid x:Name="UserTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" Margin="250,133,24,60" IsSynchronizedWithCurrentItem="True" RenderTransformOrigin="0.5,0.5" Background="#FFEFE8E8" Foreground="Black" >
+            <DataGrid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.012"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </DataGrid.RenderTransform>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}"/>
+                <DataGridTextColumn Header="Usuario" Binding="{Binding User}"/>
+                <DataGridTextColumn Header="Password" Binding="{Binding Password}"/>
 
+                <DataGridTemplateColumn Header="Editar">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Edit" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Delete">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Delete"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="47,174,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.616,11.673" IsEnabled="False" Background="{x:Null}" BorderBrush="White" />
+        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="47,298,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Background="{x:Null}" BorderBrush="White"/>
+        <TextBox x:Name="txtUser" HorizontalAlignment="Left" Margin="47,257,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Background="{x:Null}" BorderBrush="White"/>
+        <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Margin="47,217,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Background="{x:Null}" BorderBrush="White"/>
+        <Label Content="Id" HorizontalAlignment="Left" Margin="47,143,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" Foreground="White"/>
+        <Label Content="Usuario" HorizontalAlignment="Left" Margin="45,231,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" Foreground="White"/>
+        <Label Content="Nombre" HorizontalAlignment="Left" Margin="45,192,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" Foreground="White"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="47,275,0,0" VerticalAlignment="Top" Height="23" FontFamily="Times New Roman" Foreground="White"/>
+        <Button Content="Guardar" HorizontalAlignment="Left" Margin="47,337,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#FF006DFF" BorderBrush="#FF0033FF"/>
+        <Button Content="Crear" HorizontalAlignment="Left" Margin="121,337,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#FF2BFF00" BorderBrush="#FF42FF00" Click="Button_Click" Width="46"/>
+        <Button Content="Eliminar" HorizontalAlignment="Left" Margin="84,373,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="Red" BorderBrush="Red" Click="Button_Click"/>
     </Grid>
 </Window>
